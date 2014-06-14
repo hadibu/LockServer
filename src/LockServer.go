@@ -1,3 +1,10 @@
+/** Copyright (c) hadibu
+-- Created by IntelliJ IDEA.
+-- User: chuanxin@163.com
+-- Date: 14-6-14
+-- Time: 下午15:00
+*/
+
 package main
 
 import (
@@ -16,10 +23,12 @@ import (
 func PrintPanicStack() {
 	if reco := recover(); reco != nil {
 		log.Printf("%v", reco)
-		for i := 0; i < 10; i++ {
+		for i := 0; i < 100; i++ {
 			funcName, fileName, line, ok := runtime.Caller(i)
 			if ok {
-				log.Printf("frame %v:[func:%v,file:%v,line:%v]\n", i, runtime.FuncForPC(funcName).Name(), fileName, line)
+				log.Printf("[func:%v,file:%v,line:%v]\n", runtime.FuncForPC(funcName).Name(), fileName, line)
+			} else {
+				break
 			}
 		}
 	}

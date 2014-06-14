@@ -1,7 +1,7 @@
 {
     "CPU": 2,
-    "BindIp": "192.168.0.121",
-    "ListenPort": 10086,
+    "BindIp": "127.0.0.1",
+    "ListenPort": 8888,
     "LogPath": "x:/",
     "Locks": [
         {
