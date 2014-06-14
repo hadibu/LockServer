@@ -1,6 +1,7 @@
 #LockServer
 
-##cluster to share limited resource
-*per connection per lock
-*connection closed means unlock
+##cluster to share limited resources
+1. per connection per lock
+2. connection closed means unlock
+
 
