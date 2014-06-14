@@ -47,6 +47,9 @@ function LockUtil:lock(lockName)
     if not sock then
         return nil, err
     end
+
+    sock:settimeout(self.timeout)
+
     local status, err = sock:connect(self.host, self.port)
     if not status then
         return nil, err
